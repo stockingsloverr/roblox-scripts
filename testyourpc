@@ -20,12 +20,7 @@ local Tabs = {
 
 do
 
-    Fluent:Notify({
-        Title = "Notification",
-        Content = "Join my discord pls",
-        SubContent = "https://discord.gg/png3hAU7mk", 
-        Duration = 5 
-    })
+    
 
     local Input = Tabs.Main:AddInput("Input", {
         Title = "How many parts u wanna spawn",
@@ -48,6 +43,21 @@ do
                 part.CFrame = CFrame.new(plr.CFrame.Position + Vector3.new(0,30,0))
                 
             end
+        end
+    })
+
+    Tabs.Main:AddButton({
+        Title = "Copy discord server link (>//////<)",
+        Description = "join pls",
+        Callback = function()
+            setclipboard("https://discord.gg/png3hAU7mk")
+
+            Fluent:Notify({
+                Title = "Notification",
+                Content = "Server link copied to clipboard",
+                SubContent = "https://discord.gg/png3hAU7mk", 
+                Duration = 5 
+            })
         end
     })
 
